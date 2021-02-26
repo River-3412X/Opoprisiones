@@ -100,14 +100,13 @@ header .nav-down{
     .registro{
         padding-top: 50px;
     }
-}
-@media(max-width:576px){
     header .nav-item{
         margin-bottom: 10px;
         background: rgba(36, 36, 36, 0.248);
         text-align: center;
     }
 }
+
 @media(max-width:360px ){
     header h1{
         font-size: 2em;

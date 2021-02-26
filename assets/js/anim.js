@@ -7,6 +7,7 @@ var eventos1=0;
 var eventos2=0;
 var eventos3=0;
 window.onload=function(){
+        
         gsap.timeline().staggerFrom(".title",0.01,{
             opacity:0
         },0.1)
@@ -31,6 +32,9 @@ window.onload=function(){
             $("#navbar").removeClass("shadow");
             $("#logo").removeClass("navbar-brand-down");
         }
+        const ioVideo= new IntersectionObserver(repro,{});
+        ioVideo.observe(document.getElementById("video"));
+
         const ioQquienes_s= new IntersectionObserver(animqs,{});
         ioQquienes_s.observe(document.getElementById("quienes_somos"));
         
@@ -169,5 +173,13 @@ function anim_eventos3(entries,observer){
             opacity:0,x:100
         },"-=1");
         eventos3++;
+    }
+}
+function repro(entries,observer){
+    if(entries[0].isIntersecting){
+        document.getElementById("video").play();
+    }
+    else{
+        document.getElementById("video").pause();
     }
 }
